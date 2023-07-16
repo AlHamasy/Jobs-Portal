@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Jobs Portal</string>
+    <string name="facebook_app_id">791493632445803</string>
+    <string name="fb_login_protocol_scheme">fb791493632445803</string>
+    <string name="facebook_client_token">191e115efef02198bbd4985713379973</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_dashboard">Dashboard</string>
+    <string name="title_account">Account</string>
+</resources>

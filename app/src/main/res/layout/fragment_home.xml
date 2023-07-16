@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.home.HomeFragment">
+
+    <LinearLayout
+        android:id="@+id/ll_search_box"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <androidx.appcompat.widget.SearchView
+            android:layout_weight="1"
+            android:id="@+id/sv_job"
+            app:iconifiedByDefault="false"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <ImageView
+            android:id="@+id/img_btn_arrow"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:backgroundTintMode="src_atop"
+            android:src="@drawable/baseline_keyboard_arrow_down_24"/>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:background="@color/browser_actions_bg_grey"
+        android:visibility="gone"
+        android:layout_marginHorizontal="12dp"
+        android:padding="12dp"
+        android:layout_below="@+id/ll_search_box"
+        android:id="@+id/rl_filter_box"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:textSize="16sp"
+            android:id="@+id/tv_lbl_fulltime"
+            android:text="Fulltime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:textSize="16sp"
+            android:layout_below="@+id/tv_lbl_fulltime"
+            android:id="@+id/tv_lbl_location"
+            android:text="Location"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"/>
+
+        <androidx.appcompat.widget.SwitchCompat
+            android:id="@+id/sw_fulltime"
+            android:layout_alignParentEnd="true"
+            android:layout_alignBaseline="@id/tv_lbl_fulltime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <EditText
+            android:layout_marginStart="24dp"
+            android:id="@+id/edt_location"
+            android:layout_toEndOf="@+id/tv_lbl_location"
+            android:layout_alignBaseline="@+id/tv_lbl_location"
+            android:layout_alignParentEnd="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:layout_alignParentEnd="true"
+            android:layout_below="@+id/edt_location"
+            android:id="@+id/btn_apply_filter"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Apply Filter"/>
+
+
+    </RelativeLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_job"
+        android:layout_below="@+id/rl_filter_box"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:clipToPadding="false"
+        android:paddingBottom="12dp"
+        tools:listitem="@layout/item_job" />
+
+</RelativeLayout>
